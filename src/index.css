@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+background-filter {
+  filter: blur(0.4px);
+}
+
+svg path {
+  stroke: #888;
+}
+
+.dark svg path {
+  stroke: #333;
+}
+@keyframes floatLines {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+svg {
+  animation: floatLines 20s ease-in-out infinite;
+}
+
+@keyframes slide-enter {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-enter {
+  animation: slide-enter 0.7s ease;
+}
