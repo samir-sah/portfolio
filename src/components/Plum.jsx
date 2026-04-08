@@ -59,8 +59,8 @@ const Plum = () => {
       ctx.clearRect(0, 0, w, h);
       ctx.lineWidth = 1;
       
-      // BRANCH COLOR: White with 15% opacity looks sick on black
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)'; 
+      // BRANCH COLOR: Dark ink with 10% opacity for visibility on white
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)'; 
       
       const rM = () => Math.random() * 0.6 + 0.2;
       steps = [
@@ -81,7 +81,12 @@ const Plum = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 bg-black">
+    <div 
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{
+        backgroundColor: '#ffffff' // Pure white background
+      }}
+    >
       <canvas ref={canvasRef} />
     </div>
   );
